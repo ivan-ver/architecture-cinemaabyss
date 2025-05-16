@@ -58,7 +58,6 @@ kubeconfig
 
 # Logs
 logs/
-*.log
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
@@ -68,6 +67,7 @@ dist/
 build/
 out/
 target/
+mvn/
 .gradle/
 
 # Node.js (for frontend or Node.js services)

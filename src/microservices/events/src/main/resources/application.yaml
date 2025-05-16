@@ -1,0 +1,21 @@
+server:
+  port: ${PORT}
+
+spring:
+  kafka:
+    producer:
+      bootstrap-servers: ${KAFKA_BROKERS}
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
+    consumer:
+      enable-auto-commit: true
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
+      bootstrap-servers: ${KAFKA_BROKERS}
+      auto-offset-reset: latest
+      group-id: event-group-id
+      properties:
+        spring:
+          json:
+            trusted:
+              packages: "*"

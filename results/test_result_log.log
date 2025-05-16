@@ -1,0 +1,145 @@
+2025-05-23T05:50:10.095848537Z Running tests against docker environment...
+2025-05-23T05:50:10.106270934Z newman: could not find "htmlextra" reporter
+2025-05-23T05:50:10.106286982Z   ensure that the reporter is installed in the same directory as newman
+2025-05-23T05:50:10.106288693Z   please install reporter using npm
+2025-05-23T05:50:10.106289754Z
+2025-05-23T05:50:10.223818405Z newman
+2025-05-23T05:50:10.223841574Z
+2025-05-23T05:50:10.223844485Z CinemaAbyss API Tests
+2025-05-23T05:50:10.225865063Z
+2025-05-23T05:50:10.225882789Z ❏ Monolith Service
+2025-05-23T05:50:10.225890770Z ↳ Health Check
+2025-05-23T05:50:10.348729925Z   GET http://monolith:8080/health [200 OK, 124B, 15ms]
+2025-05-23T05:50:10.359346622Z   ✓  Status code is 200
+2025-05-23T05:50:10.363237971Z
+2025-05-23T05:50:10.363244426Z ↳ Get All Users
+2025-05-23T05:50:10.479707975Z   GET http://monolith:8080/api/users [200 OK, 243B, 6ms]
+2025-05-23T05:50:10.486785388Z   ✓  Status code is 200
+2025-05-23T05:50:10.487197095Z   ✓  Response is an array
+2025-05-23T05:50:10.492858984Z
+2025-05-23T05:50:10.492870550Z ↳ Create User
+2025-05-23T05:50:10.610029172Z   POST http://monolith:8080/api/users [201 Created, 182B, 7ms]
+2025-05-23T05:50:10.613308938Z   ✓  Status code is 201
+2025-05-23T05:50:10.613686798Z   ✓  Response has id
+2025-05-23T05:50:10.617370468Z
+2025-05-23T05:50:10.617384482Z ↳ Get User by ID
+2025-05-23T05:50:10.735131485Z   GET http://monolith:8080/api/users?id=24 [200 OK, 177B, 6ms]
+2025-05-23T05:50:10.743730619Z   ✓  Status code is 200
+2025-05-23T05:50:10.744045981Z   ✓  User ID matches
+2025-05-23T05:50:10.748122525Z
+2025-05-23T05:50:10.748151665Z ↳ Get All Movies
+2025-05-23T05:50:10.863461790Z   GET http://monolith:8080/api/movies [200 OK, 5.46kB, 9ms]
+2025-05-23T05:50:10.868274831Z   ✓  Status code is 200
+2025-05-23T05:50:10.869030456Z   ✓  Response is an array
+2025-05-23T05:50:10.873333632Z
+2025-05-23T05:50:10.873362031Z ↳ Create Movie
+2025-05-23T05:50:10.997302451Z   POST http://monolith:8080/api/movies [201 Created, 246B, 13ms]
+2025-05-23T05:50:11.004493445Z   ✓  Status code is 201
+2025-05-23T05:50:11.004862822Z   ✓  Response has id
+2025-05-23T05:50:11.009585923Z
+2025-05-23T05:50:11.009595216Z ↳ Get Movie by ID
+2025-05-23T05:50:11.118349793Z   GET http://monolith:8080/api/movies?id=23 [200 OK, 241B, 2ms]
+2025-05-23T05:50:11.122139586Z   ✓  Status code is 200
+2025-05-23T05:50:11.122222136Z   ✓  Movie ID matches
+2025-05-23T05:50:11.126375312Z
+2025-05-23T05:50:11.126402050Z ↳ Create Payment
+2025-05-23T05:50:11.249417187Z   POST http://monolith:8080/api/payments [201 Created, 195B, 13ms]
+2025-05-23T05:50:11.256647895Z   ✓  Status code is 201
+2025-05-23T05:50:11.257189523Z   ✓  Response has id
+2025-05-23T05:50:11.263025793Z
+2025-05-23T05:50:11.263054284Z ↳ Get Payment by ID
+2025-05-23T05:50:11.371849432Z   GET http://monolith:8080/api/payments?id=24 [200 OK, 187B, 2ms]
+2025-05-23T05:50:11.375185590Z   ✓  Status code is 200
+2025-05-23T05:50:11.375475147Z   ✓  Payment ID matches
+2025-05-23T05:50:11.379524677Z
+2025-05-23T05:50:11.379535120Z ↳ Create Subscription
+2025-05-23T05:50:11.504054812Z   POST http://monolith:8080/api/subscriptions [201 Created, 237B, 14ms]
+2025-05-23T05:50:11.511208918Z   ✓  Status code is 201
+2025-05-23T05:50:11.511735600Z   ✓  Response has id
+2025-05-23T05:50:11.518118443Z
+2025-05-23T05:50:11.518130205Z ↳ Get Subscription by ID
+2025-05-23T05:50:11.627087725Z   GET http://monolith:8080/api/subscriptions?id=24 [200 OK, 232B, 3ms]
+2025-05-23T05:50:11.630634286Z   ✓  Status code is 200
+2025-05-23T05:50:11.630648587Z   ✓  Subscription ID matches
+2025-05-23T05:50:11.634869021Z
+2025-05-23T05:50:11.634894732Z ❏ Movies Microservice
+2025-05-23T05:50:11.634896605Z ↳ Health Check
+2025-05-23T05:50:11.750738122Z   GET http://movies-service:8081/api/movies/health [200 OK, 124B, 5ms]
+2025-05-23T05:50:11.757460494Z   ✓  Status code is 200
+2025-05-23T05:50:11.757776442Z   ✓  Status is true
+2025-05-23T05:50:11.762781312Z
+2025-05-23T05:50:11.762793771Z ↳ Get All Movies
+2025-05-23T05:50:11.878379763Z   GET http://movies-service:8081/api/movies [200 OK, 5.59kB, 10ms]
+2025-05-23T05:50:11.881839442Z   ✓  Status code is 200
+2025-05-23T05:50:11.881936940Z   ✓  Response is an array
+2025-05-23T05:50:11.885297694Z
+2025-05-23T05:50:11.885305013Z ↳ Create Movie
+2025-05-23T05:50:12.009411467Z   POST http://movies-service:8081/api/movies [201 Created, 283B, 15ms]
+2025-05-23T05:50:12.014781902Z   ✓  Status code is 201
+2025-05-23T05:50:12.015027898Z   ✓  Response has id
+2025-05-23T05:50:12.019971598Z
+2025-05-23T05:50:12.019981892Z ↳ Get Movie by ID
+2025-05-23T05:50:12.129683373Z   GET http://movies-service:8081/api/movies?id=24 [200 OK, 278B, 3ms]
+2025-05-23T05:50:12.133982679Z   ✓  Status code is 200
+2025-05-23T05:50:12.134440207Z   ✓  Movie ID matches
+2025-05-23T05:50:12.139403012Z
+2025-05-23T05:50:12.139411906Z ❏ Events Microservice
+2025-05-23T05:50:12.139413311Z ↳ Health Check
+2025-05-23T05:50:12.248977421Z   GET http://events-service:8082/api/events/health [200 OK, 179B, 4ms]
+2025-05-23T05:50:12.252155132Z   ✓  Status code is 200
+2025-05-23T05:50:12.252281411Z   ✓  Status is true
+2025-05-23T05:50:12.255557911Z
+2025-05-23T05:50:12.255564827Z ↳ Create Movie Event
+2025-05-23T05:50:12.366789555Z   POST http://events-service:8082/api/events/movie [201 Created, 439B, 6ms]
+2025-05-23T05:50:12.370049467Z   ✓  Status code is 201
+2025-05-23T05:50:12.370603633Z   ✓  Response has status success
+2025-05-23T05:50:12.373995649Z
+2025-05-23T05:50:12.374014221Z ↳ Create User Event
+2025-05-23T05:50:12.486384840Z   POST http://events-service:8082/api/events/user [201 Created, 427B, 7ms]
+2025-05-23T05:50:12.489717521Z   ✓  Status code is 201
+2025-05-23T05:50:12.490197597Z   ✓  Response has status success
+2025-05-23T05:50:12.494008867Z
+2025-05-23T05:50:12.494015742Z ↳ Create Payment Event
+2025-05-23T05:50:12.607353691Z   POST http://events-service:8082/api/events/payment [201 Created, 450B, 7ms]
+2025-05-23T05:50:12.612081829Z   ✓  Status code is 201
+2025-05-23T05:50:12.612467602Z   ✓  Response has status success
+2025-05-23T05:50:12.616463425Z
+2025-05-23T05:50:12.616469927Z ❏ Proxy Service
+2025-05-23T05:50:12.616471341Z ↳ Health Check
+2025-05-23T05:50:12.818156363Z   GET http://proxy-service:8000/health [200 OK, 86B, 92ms]
+2025-05-23T05:50:12.820790905Z   ✓  Status code is 200
+2025-05-23T05:50:12.824262034Z
+2025-05-23T05:50:12.824278392Z ↳ Get All Movies via Proxy
+2025-05-23T05:50:13.005623772Z   GET http://proxy-service:8000/api/movies [200 OK, 5.76kB, 76ms]
+2025-05-23T05:50:13.008417049Z   ✓  Status code is 200
+2025-05-23T05:50:13.008503699Z   ✓  Response is an array
+2025-05-23T05:50:13.011659302Z
+2025-05-23T05:50:13.011669360Z ↳ Get All Users via Proxy
+2025-05-23T05:50:13.125509429Z   GET http://proxy-service:8000/api/users [200 OK, 312B, 8ms]
+2025-05-23T05:50:13.128018247Z   ✓  Status code is 200
+2025-05-23T05:50:13.128032797Z   ✓  Response is an array
+2025-05-23T05:50:13.141907165Z
+2025-05-23T05:50:13.141922184Z ┌─────────────────────────┬──────────────────┬──────────────────┐
+2025-05-23T05:50:13.141924088Z │                         │         executed │           failed │
+2025-05-23T05:50:13.141925235Z ├─────────────────────────┼──────────────────┼──────────────────┤
+2025-05-23T05:50:13.141926294Z │              iterations │                1 │                0 │
+2025-05-23T05:50:13.141927259Z ├─────────────────────────┼──────────────────┼──────────────────┤
+2025-05-23T05:50:13.141928310Z │                requests │               22 │                0 │
+2025-05-23T05:50:13.141929235Z ├─────────────────────────┼──────────────────┼──────────────────┤
+2025-05-23T05:50:13.141930300Z │            test-scripts │               22 │                0 │
+2025-05-23T05:50:13.141931229Z ├─────────────────────────┼──────────────────┼──────────────────┤
+2025-05-23T05:50:13.141932278Z │      prerequest-scripts │                0 │                0 │
+2025-05-23T05:50:13.141933199Z ├─────────────────────────┼──────────────────┼──────────────────┤
+2025-05-23T05:50:13.141934213Z │              assertions │               42 │                0 │
+2025-05-23T05:50:13.141935130Z ├─────────────────────────┴──────────────────┴──────────────────┤
+2025-05-23T05:50:13.141936146Z │ total run duration: 2.9s                                      │
+2025-05-23T05:50:13.141937425Z ├───────────────────────────────────────────────────────────────┤
+2025-05-23T05:50:13.141938703Z │ total data received: 18.82kB (approx)                         │
+2025-05-23T05:50:13.141939666Z ├───────────────────────────────────────────────────────────────┤
+2025-05-23T05:50:13.141940668Z │ average response time: 14ms [min: 2ms, max: 92ms, s.d.: 22ms] │
+2025-05-23T05:50:13.141941623Z └───────────────────────────────────────────────────────────────┘
+2025-05-23T05:50:13.141946324Z Newman run completed!
+2025-05-23T05:50:13.141947270Z Total requests: 22
+2025-05-23T05:50:13.141948159Z Failed requests: 0
+2025-05-23T05:50:13.141949015Z Total assertions: 42
+2025-05-23T05:50:13.141949900Z Failed assertions: 0
