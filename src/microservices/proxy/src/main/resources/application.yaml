@@ -1,0 +1,11 @@
+server:
+  port: ${PORT}
+
+feature-flags:
+  gradual-migration: ${GRADUAL_MIGRATION}
+  movies-migration-percent: ${MOVIES_MIGRATION_PERCENT}
+
+url:
+  monolith: ${MONOLITH_URL}
+  movies-service: ${MOVIES_SERVICE_URL}
+  events-service: ${EVENTS_SERVICE_URL}

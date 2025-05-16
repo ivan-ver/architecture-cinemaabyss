@@ -68,6 +68,7 @@ dist/
 build/
 out/
 target/
+mvn/
 .gradle/
 
 # Node.js (for frontend or Node.js services)
