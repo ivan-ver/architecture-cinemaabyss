@@ -136,6 +136,24 @@ services:
     networks:
       - cinemaabyss-network
 
+  ubuntu:
+    image: ubuntu:latest
+    stdin_open: true
+    tty: true
+    ports:
+      - "9090:80"
+    command: bash
+    volumes:
+      - ./common:/common
+
+  test-container:
+    build:
+      context: ./tests/postman
+      dockerfile: Dockerfile
+    container_name: test-container
+    networks:
+      - cinemaabyss-network
+
 volumes:
   postgres-data:
 
